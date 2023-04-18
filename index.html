@@ -28,6 +28,7 @@
     </div>
     <script>
     if ('OTPCredential' in window) {
+      alert ("OTPCrendetial supported"); 
       window.addEventListener('DOMContentLoaded', e => {
         const input = document.querySelector('input[autocomplete="one-time-code"]');
         if (!input) return;
@@ -49,7 +50,7 @@
         });
       });
     }else{
-     alert ("OTPCrendetial not supported"); 
+     alert ("OTPCrendetial NOT supported"); 
     }
     </script>
   </body>
