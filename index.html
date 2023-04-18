@@ -28,14 +28,20 @@
     </div>
     <script>
     if ('OTPCredential' in window) {
-      alert ("OTPCredential supported 1.0.0"); 
+      alert ("OTPCredential supported 1.0.1"); 
       window.addEventListener('DOMContentLoaded', e => {
+        alert ("DOMContentLoaded");
         const input = document.querySelector('input[autocomplete="one-time-code"]');
-        if (!input) return;
+        if (!input) {
+         alert ("Not input");
+         return; 
+        }
         const ac = new AbortController();
         const form = input.closest('form');
         if (form) {
+          alert ("Exists form");
           form.addEventListener('submit', e => {
+             alert ("Submit");
             ac.abort();
           });
         }
@@ -52,7 +58,7 @@
         });
       });
     }else{
-     alert ("OTPCredential NOT supported 1.0.0"); 
+     alert ("OTPCredential NOT supported 1.0.1"); 
     }
     </script>
   </body>
