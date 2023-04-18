@@ -43,6 +43,7 @@
           otp: { transport:['sms'] },
           signal: ac.signal
         }).then(otp => {
+          alert ("OTP received");
           input.value = otp.code;
           if (form) form.submit();
         }).catch(err => {
