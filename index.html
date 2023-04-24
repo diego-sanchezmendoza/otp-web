@@ -28,7 +28,7 @@
     </div>
     <script>
     if ('OTPCredential' in window) {
-      alert ("OTPCredential supported 1.0.2"); 
+      alert ("OTPCredential supported 1.0.3"); 
       window.addEventListener('DOMContentLoaded', e => {
         alert ("DOMContentLoaded");
         const input = document.querySelector('input[autocomplete="one-time-code"]');
@@ -58,8 +58,14 @@
         });
       });
     }else{
-     alert ("OTPCredential NOT supported 1.0.2"); 
+     alert ("OTPCredential NOT supported 1.0.3"); 
     }
+      
+    const input = document.querySelector('input[autocomplete="one-time-code"]');
+    input.onpaste = function(event) {
+      alert("paste: " + event.clipboardData.getData('text/plain'));
+      event.preventDefault();
+    };
     </script>
   </body>
 </html>
