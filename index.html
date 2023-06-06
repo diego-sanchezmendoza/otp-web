@@ -36,20 +36,20 @@
     </div>
     <script>
     if ('OTPCredential' in window) {
-      alert ("OTPCredential supported 1.0.3"); 
+      //alert ("OTPCredential supported 1.0.3"); 
       window.addEventListener('DOMContentLoaded', e => {
-        alert ("DOMContentLoaded");
+        //alert ("DOMContentLoaded");
         const input = document.querySelector('input[autocomplete="one-time-code"]');
         if (!input) {
-         alert ("Not input");
+         //alert ("Not input");
          return; 
         }
         const ac = new AbortController();
         const form = input.closest('form');
         if (form) {
-          alert ("Exists form");
+          //alert ("Exists form");
           form.addEventListener('submit', e => {
-             alert ("Submit");
+             //alert ("Submit");
             ac.abort();
           });
         }
@@ -57,21 +57,21 @@
           otp: { transport:['sms'] },
           signal: ac.signal
         }).then(otp => {
-          alert ("OTP received");
+          //alert ("OTP received");
           input.value = otp.code;
           if (form) form.submit();
         }).catch(err => {
           //console.log(err);
-          alert (err);
+          //alert (err);
         });
       });
     }else{
-     alert ("OTPCredential NOT supported 1.0.3"); 
+     //alert ("OTPCredential NOT supported 1.0.3"); 
     }
       
     const input = document.querySelector('input[autocomplete="one-time-code"]');
     input.onpaste = function(event) {
-      alert("paste: " + event.clipboardData.getData('text/plain'));
+      //alert("paste: " + event.clipboardData.getData('text/plain'));
       event.preventDefault();
     };
     </script>
