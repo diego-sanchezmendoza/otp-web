@@ -10,7 +10,7 @@
     <div>
       <img src="https://cdn-icons-png.flaticon.com/512/3722/3722014.png" id="passwordOjoImg" alt="ojo" width="200" height="200">
       <script>
-        alert ("1.0.0");
+        alert ("1.0.1");
         /*
       $("#passwordOjoImg").on('contextmenu', function (e) {
                 return false;
@@ -18,7 +18,12 @@
         
         const ojo = document.getElementById("passwordOjoImg");
         ojo.addEventListener("contextmenu", (e) => {e.preventDefault()});
+        
+        
         </script>
+        <style>
+          #passwordOjoImg { -webkit-user-select: none !important; }
+      </style>
     </div>
     <h1>
       The simplest Web OTP API demo
