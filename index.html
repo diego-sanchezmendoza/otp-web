@@ -10,9 +10,13 @@
     <div>
       <img src="https://cdn-icons-png.flaticon.com/512/3722/3722014.png" id="passwordOjoImg" alt="ojo" width="200" height="200">
       <script>
+        /*
       $("#passwordOjoImg").on('contextmenu', function (e) {
                 return false;
-            });
+            });*/
+        
+        const ojo = document.getElementById("passwordOjoImg");
+        ojo.addEventListener("contextmenu", (e) => {e.preventDefault()});
         </script>
     </div>
     <h1>
